@@ -1,12 +1,77 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Website</title>
+  <title>Shu — Mt. Fuji</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <h1>Hello 👋</h1>
-  <p>This is my free GitHub Pages site.</p>
+  <!-- Video background -->
+  <div class="bg">
+    <video
+      id="bgVideo"
+      class="bg__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="assets/fuji-poster.jpg"
+    >
+      <source src="assets/fuji.mp4" type="video/mp4" />
+    </video>
+    <div class="bg__overlay" aria-hidden="true"></div>
+  </div>
+
+  <!-- Foreground content -->
+  <header class="topbar">
+    <div class="brand">Shu</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact" class="btn">Contact</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <p class="kicker">UK × Japan</p>
+    <h1>Learning, travel, and life—</h1>
+    <h1 class="accent">with Mt. Fuji vibes.</h1>
+    <p class="subtitle">
+      A clean, modern site with a cinematic background. Built on GitHub Pages.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="#work">See projects</a>
+      <a class="btn ghost" href="#about">Read more</a>
+    </div>
+  </main>
+
+  <section id="about" class="section glass">
+    <h2>About</h2>
+    <p>
+      Write something here. (Education in the UK, study abroad tips, visa notes, etc.)
+    </p>
+  </section>
+
+  <section id="work" class="section glass">
+    <h2>Work</h2>
+    <p>Add cards, links, Instagram, note articles—anything.</p>
+  </section>
+
+  <section id="contact" class="section glass">
+    <h2>Contact</h2>
+    <p>
+      Email: <a href="mailto:hello@example.com">hello@example.com</a>
+    </p>
+  </section>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Shu</small>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
