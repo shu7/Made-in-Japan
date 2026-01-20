@@ -1,0 +1,158 @@
+:root{
+  --glass: rgba(255,255,255,.12);
+  --border: rgba(255,255,255,.18);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.72);
+  --shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color: var(--text);
+  overflow-x:hidden;
+}
+
+/* Background video */
+.bg{
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:#000;
+}
+.bg__video{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  transform: scale(1.03);
+  filter: saturate(1.1) contrast(1.05);
+}
+.bg__overlay{
+  position:absolute;
+  inset:0;
+  z-index: -1;
+  background:
+    radial-gradient(1200px 600px at 20% 15%, rgba(255,255,255,.10), transparent 60%),
+    linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.35) 40%, rgba(0,0,0,.75));
+}
+
+/* Top bar */
+.topbar{
+  position: sticky;
+  top: 0;
+  padding: 18px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.18);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+.brand{
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+.nav{
+  display:flex;
+  gap: 16px;
+  align-items:center;
+}
+.nav a{
+  color: var(--text);
+  text-decoration:none;
+  opacity:.9;
+}
+.nav a:hover{ opacity:1; }
+
+/* Hero */
+.hero{
+  min-height: calc(100vh - 70px);
+  padding: 64px 22px 30px;
+  max-width: 1050px;
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap: 10px;
+}
+.kicker{
+  margin:0;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-size: 12px;
+}
+h1{
+  margin:0;
+  font-size: clamp(34px, 6vw, 64px);
+  line-height: 1.02;
+}
+.accent{
+  text-shadow: var(--shadow);
+}
+.subtitle{
+  margin: 12px 0 0;
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.actions{
+  display:flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+/* Glass sections */
+.section{
+  max-width: 1050px;
+  margin: 18px auto;
+  padding: 22px;
+}
+.glass{
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+.section h2{ margin: 0 0 10px; }
+.section p{ margin: 0; color: var(--muted); line-height:1.7; }
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.10);
+  color: var(--text);
+  text-decoration:none;
+}
+.btn:hover{ background: rgba(255,255,255,.14); }
+.btn.primary{
+  background: rgba(255,255,255,.18);
+  border-color: rgba(255,255,255,.22);
+}
+.btn.ghost{
+  background: rgba(0,0,0,.12);
+}
+
+.footer{
+  max-width: 1050px;
+  margin: 30px auto 50px;
+  padding: 0 22px;
+  color: rgba(255,255,255,.7);
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .bg__video{ display:none; }
+  .bg{ background: #000 url("assets/fuji-poster.jpg") center/cover no-repeat; }
+}
